@@ -5,7 +5,7 @@ PYTOV is a simple Python Tolman-Oppenheimer-Volkoff (TOV) equation integrator.
 
 The TOV equations
 
-<p align="center"><img alt="$$&#10;\frac{dP}{dr} = - \frac{G}{(cr)^{2}} \frac{(\epsilon (r) + P(r))(M(r) + 4\pi r^{3} \frac{P(r)}{c^{2}})}{(1 - \frac{2G M(r)}{c^{2}r})}&#10;$$" src="https://rawgit.com/dlwhittenbury/PYTOV/master/svgs/df0261d65270bc97c0b09d7835b14a41.svg" align="middle" width="328.35165pt" height="49.145085pt"/></p>
+<p align="center"><img alt="$$&#10;\frac{dP}{dr} = - \frac{G}{(cr)^{2}} \frac{(\epsilon (r) + P(r))(M(r) + 4\pi r^{3} \frac{P(r)}{c^{2}})}{(1 - \frac{2G M(r)}{c^{2}r})}&#10;$$" src="https://rawgit.com/dlwhittenbury/PYTOV/svgs/svgs/df0261d65270bc97c0b09d7835b14a41.svg" align="middle" width="328.35165pt" height="49.145085pt"/></p>
 
 
 ### Summary:
