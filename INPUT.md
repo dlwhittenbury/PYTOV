@@ -1,6 +1,7 @@
-# PYTOV: Tolman-Oppenheimer-Volkoff equation solver
+# PYTOV: Python Tolman-Oppenheimer-Volkoff equation solver
+---
 
-PYTOV is a simple Python Tolman-Oppenheimer-Volkoff (TOV) equation integrator.
+PYTOV is a simple Python implementation to integrate the Tolman-Oppenheimer-Volkoff (TOV) equations.
 
 ---
 
@@ -18,7 +19,7 @@ $$
 $$
 \frac{dA}{dr} = \frac{4\pi r^{2}\rho}{\sqrt{1 - 2 M(r)/r}}
 $$
-These equations include the TOV equations [1,2] supplemented with an equation for the total number of baryons in the compact star. The dependent variables are the gravitational mass ($M$), the gravitational potential ($\Phi$), the pressure ($P$) and the total number of baryons ($A$).
+These equations include the TOV equations [1,2] supplemented with an equation for the total number of baryons in the compact star. The dependent variables are the gravitational mass, the gravitational potential, the pressure and the total number of baryons.
 
 This repository contains:
 - A data file (**bps.dat**) containing the low density equation of state known as BPS [3].

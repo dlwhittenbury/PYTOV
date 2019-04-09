@@ -1,6 +1,7 @@
-# PYTOV: Tolman-Oppenheimer-Volkoff equation solver
+# PYTOV: Python Tolman-Oppenheimer-Volkoff equation solver
+---
 
-PYTOV is a simple Python Tolman-Oppenheimer-Volkoff (TOV) equation integrator.
+PYTOV is a simple Python implementation to integrate the Tolman-Oppenheimer-Volkoff (TOV) equations.
 
 ---
 
@@ -10,7 +11,7 @@ The program PYTOV integrates the following set of four equations (<img alt="$G =
 <p align="center"><img alt="$$&#10;\frac{d\Phi}{dr} = \frac{  ( M(r) + 4\pi r^{3} P(r))}{r^{2}(1 - \frac{2 M(r)}{r})}&#10;$$" src="svgs/43e1594d1cf7573a16e534b7b3e30ce3.svg" align="middle" width="184.48815pt" height="44.96448pt"/></p>
 <p align="center"><img alt="$$&#10;\frac{dP}{dr} = - (\epsilon (r) + P(r)\frac{d\Phi}{dr}&#10;$$" src="svgs/5932f10081e864ead1d01847884acc61.svg" align="middle" width="167.7786pt" height="33.81213pt"/></p>
 <p align="center"><img alt="$$&#10;\frac{dA}{dr} = \frac{4\pi r^{2}\rho}{\sqrt{1 - 2 M(r)/r}}&#10;$$" src="svgs/a416eb6950e64d5ee1c1cbc76ef23764.svg" align="middle" width="154.205865pt" height="43.07688pt"/></p>
-These equations include the TOV equations [1,2] supplemented with an equation for the total number of baryons in the compact star. The dependent variables are the gravitational mass (<img alt="$M$" src="svgs/fb97d38bcc19230b0acd442e17db879c.svg" align="middle" width="17.73981pt" height="22.46574pt"/>), the gravitational potential (<img alt="$\Phi$" src="svgs/5e16cba094787c1a10e568c61c63a5fe.svg" align="middle" width="11.872245pt" height="22.46574pt"/>), the pressure (<img alt="$P$" src="svgs/df5a289587a2f0247a5b97c1e8ac58ca.svg" align="middle" width="12.836835pt" height="22.46574pt"/>) and the total number of baryons (<img alt="$A$" src="svgs/53d147e7f3fe6e47ee05b88b166bd3f6.svg" align="middle" width="12.3288pt" height="22.46574pt"/>).
+These equations include the TOV equations [1,2] supplemented with an equation for the total number of baryons in the compact star. The dependent variables are the gravitational mass, the gravitational potential, the pressure and the total number of baryons.
 
 This repository contains:
 - A data file (**bps.dat**) containing the low density equation of state known as BPS [3].
