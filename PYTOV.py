@@ -30,18 +30,8 @@ PYTOV:
 ##############################
 import numpy as np # arrays etcetera
 import matplotlib.pyplot as plt # general plotting
-import matplotlib as mpl # for figure quality (dpi)
 import os
 
-
-
-
-# Figure quality
-mpl.rcParams['figure.dpi']= 100 # in notebook resolution
-mpl.rc("savefig", dpi=400) # higher resolution when saving
-
-# Formatting options
-fs = 15 # fontsize
 
 
 ##########################
@@ -51,20 +41,16 @@ fs = 15 # fontsize
 
 currentDir = os.getcwd()
 print('Current Working Directory: ', currentDir)
-#dataDir = currentDir+'/../../../Data'
-#EoS_PATH = dataDir+"/TEMP/1_Standard/BETA/"
-#BPS_PATH = currentDir+"/Low-Density-EoS/"
-PROJECT_FILES = "/Users/lappy/My_Files_Sorted/PhD_Tidy_Up/"
-EoS_PATH = PROJECT_FILES + "Final/Data/TEMP/1_Standard/BETA/"
-BPS_PATH = PROJECT_FILES + "Final/Python_Scripts/Compact_Stars/PYTOV/Low-Density-EoS/"
+EoS_PATH = currentDir
+BPS_PATH = currentDir
 
 # First read in the desired EoS
-eos_input = np.loadtxt(EoS_PATH+"beta_eos.dat")
+eos_input = np.loadtxt(EoS_PATH+"/beta_eos.dat")
 #print(eos_input.shape)
 #print(eos_input)
 
 # Read in BPS my_low_eos
-eosBPS = np.loadtxt(BPS_PATH+"my_low_eos.dat")
+eosBPS = np.loadtxt(BPS_PATH+"/bps.dat")
 #print(eosBPS.shape)
 #print(eosBPS)
 
@@ -371,9 +357,9 @@ iterations = 335;
 # Start off centre
 rs = 0.00001; # [km]
 # Stepsize (APPROX. TIME: dr = 0.01 about 1 min, dr = 0.001 about 10 min )
-# Best to use 0.001 when require accurate results. Could improve this  
+# Best to use 0.001 when you require accurate results. Could improve this  
 # integrator by upgrading to a variable step size integrator.
-dr = 0.001;# 0.001;
+dr = 0.001;# 0.01; 0.001;
 
 
 
@@ -466,6 +452,10 @@ Phimax = (Phins[ind])[0]
 ##########
 # OUTPUT
 ##########   
+
+# Formatting options
+fs = 15 # fontsize
+
 OUT = np.c_[Rhoc, Rns,Mns];    
 # Output to file compact_stars.dat
 np.savetxt('compact_stars.dat', OUT, fmt='%1.6e')
@@ -480,27 +470,35 @@ OUT = [Rhocmax,Rmax, Mmax]
 np.savetxt('max_mass_star.dat',OUT,fmt='%1.6e')
 
 
-fig1 = plt.figure(figsize=(6,4))
+fig1 = plt.figure(figsize=(8,6))
 plt.plot(Rns, Mns,'b*-')
 plt.plot(Rmax,Mmax,'ro')
 plt.xlabel("Radius [km]",fontsize=fs)
 plt.ylabel(r"Mass [$M_{\odot}$]",fontsize=fs)
 plt.show()
+fig1.savefig('mass_vs_radius.png')
 
-fig2 = plt.figure(figsize=(6,4))
+fig2 = plt.figure(figsize=(8,6))
 plt.plot(neos, peos*km_2ToMeVfm_3,'b-')
 plt.plot(Rhocmax,pressure(Rhocmax)*km_2ToMeVfm_3,'ro')
 plt.xlabel(r"Density $\rho$ [fm$^{-3}$]",fontsize=fs)
 plt.ylabel("Pressure [MeVfm$^{-3}$]",fontsize=fs)
 plt.show()
+fig2.savefig('pressure_vs_density.png')
+
+
+
 # PLOT PHI FROM SURFACE TO 20~km say
 rkm = np.linspace(Rmax,20,200)
 
 # Phi external 
 phiExt = 0.5*np.log(1.0 - np.divide(2.0*Mmax*ModotTokm,rkm))
 
-fig3 = plt.figure(figsize=(6,4))
+fig3 = plt.figure(figsize=(8,6))
 plt.plot(Rmax,Phimax,'r*') # Graviational field a surface
 plt.plot(rkm,phiExt) # External gravitational field
+plt.xlabel("Radius [km]",fontsize=fs)
+plt.ylabel(r"$\Phi$",fontsize=fs)
 plt.show()
+fig3.savefig('grav_vs_radius.png')
 
