@@ -18,7 +18,7 @@ $$
 $$
 \frac{dA}{dr} = \frac{4\pi r^{2}\rho}{\sqrt{1 - 2 M(r)/r}}
 $$
-These equations include the TOV equations [1,2] supplemented with an equation for the total number of baryons in the compact star. The dependent variables are $M$ the gravitational mass, $\Phi$ the gravitational potential, $P$ the pressure and $A$ the total number of baryons.
+These equations include the TOV equations [1,2] supplemented with an equation for the total number of baryons in the compact star. The dependent variables are the gravitational mass ($M$), the gravitational potential ($\Phi$), the pressure ($P$) and the total number of baryons ($A$).
 
 This repository contains:
 - A data file (**bps.dat**) containing the low density equation of state known as BPS [3].
