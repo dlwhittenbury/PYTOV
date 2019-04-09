@@ -22,7 +22,7 @@ These equations include the TOV equations [1,2] supplemented with an equation fo
 
 This repository contains:
 - A data file (**bps.dat**) containing the low density equation of state known as BPS [3].
-- A data file (**beta_eos.dat**) containing a high density equation of state obtained from a Hartree-Fock calculation of the QMC model, specifically the *Standard* variation appearing in [5-7].
+- A data file (**beta_eos.dat**) containing a high density equation of state obtained from a Hartree-Fock calculation of the Quark-Meson Coupling (QMC) model, specifically the *Standard* variation appearing in [5-7].
 
 - The python script PYTOV.py which integrates the above mentioned equations. The following is a brief summary of what the code does:
 
