@@ -9,7 +9,7 @@ PYTOV is a simple Python implementation to integrate the Tolman-Oppenheimer-Volk
 The program PYTOV integrates the following set of four equations (<img alt="$G = c = 1$" src="svgs/f944a0ba9141dc7428192f7f5ef42633.svg" align="middle" width="72.092955pt" height="22.46574pt"/>):
 <p align="center"><img alt="$$&#10;\frac{dM}{dr} =4\pi r^{2} \epsilon (r)&#10;$$" src="svgs/d0d6778b767c7b2ad6fbfdfab5bf8faa.svg" align="middle" width="110.94336pt" height="33.81213pt"/></p>
 <p align="center"><img alt="$$&#10;\frac{d\Phi}{dr} = \frac{  ( M(r) + 4\pi r^{3} P(r))}{r^{2}(1 - \frac{2 M(r)}{r})}&#10;$$" src="svgs/43e1594d1cf7573a16e534b7b3e30ce3.svg" align="middle" width="184.48815pt" height="44.96448pt"/></p>
-<p align="center"><img alt="$$&#10;\frac{dP}{dr} = - (\epsilon (r) + P(r)\frac{d\Phi}{dr}&#10;$$" src="svgs/5932f10081e864ead1d01847884acc61.svg" align="middle" width="167.7786pt" height="33.81213pt"/></p>
+<p align="center"><img alt="$$&#10;\frac{dP}{dr} = - (\epsilon (r) + P(r))\frac{d\Phi}{dr}&#10;$$" src="svgs/9a5e592f73a6c3405d7652d229e5fcd8.svg" align="middle" width="174.17235pt" height="33.81213pt"/></p>
 <p align="center"><img alt="$$&#10;\frac{dA}{dr} = \frac{4\pi r^{2}\rho}{\sqrt{1 - 2 M(r)/r}}&#10;$$" src="svgs/a416eb6950e64d5ee1c1cbc76ef23764.svg" align="middle" width="154.205865pt" height="43.07688pt"/></p>
 These equations include the TOV equations [1,2] supplemented with an equation for the total number of baryons in the compact star. The dependent variables are the gravitational mass, the gravitational potential, the pressure and the total number of baryons.
 
@@ -17,7 +17,7 @@ This repository contains:
 - A data file (**bps.dat**) containing the low density equation of state known as BPS [3].
 - A data file (**beta_eos.dat**) containing a high density equation of state obtained from a Hartree-Fock calculation of the Quark-Meson Coupling (QMC) model, specifically the *Standard* variation appearing in [5-7].
 
-- The python script PYTOV.py which integrates the above mentioned equations. The following is a brief summary of what the code does:
+- The python script **PYTOV.py** which integrates the above mentioned equations. The following is a brief summary of what the code does:
 
     +   A high density equation of state file and a low density equation of state file will be read and then combined in a simple manner.
 

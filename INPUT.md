@@ -14,7 +14,7 @@ $$
 \frac{d\Phi}{dr} = \frac{  ( M(r) + 4\pi r^{3} P(r))}{r^{2}(1 - \frac{2 M(r)}{r})}
 $$
 $$
-\frac{dP}{dr} = - (\epsilon (r) + P(r)\frac{d\Phi}{dr}
+\frac{dP}{dr} = - (\epsilon (r) + P(r))\frac{d\Phi}{dr}
 $$
 $$
 \frac{dA}{dr} = \frac{4\pi r^{2}\rho}{\sqrt{1 - 2 M(r)/r}}
@@ -25,7 +25,7 @@ This repository contains:
 - A data file (**bps.dat**) containing the low density equation of state known as BPS [3].
 - A data file (**beta_eos.dat**) containing a high density equation of state obtained from a Hartree-Fock calculation of the Quark-Meson Coupling (QMC) model, specifically the *Standard* variation appearing in [5-7].
 
-- The python script PYTOV.py which integrates the above mentioned equations. The following is a brief summary of what the code does:
+- The python script **PYTOV.py** which integrates the above mentioned equations. The following is a brief summary of what the code does:
 
     +   A high density equation of state file and a low density equation of state file will be read and then combined in a simple manner.
 
