@@ -25,13 +25,15 @@ This repository contains:
 - A data file (**bps.dat**) containing the low density equation of state known as BPS [3].
 - A data file (**beta_eos.dat**) containing a high density equation of state obtained from a Hartree-Fock calculation of the Quark-Meson Coupling (QMC) model, specifically the *Standard* variation appearing in [5-7].
 
-- The python script **PYTOV.py** which integrates the above mentioned equations. The following is a brief summary of what the code does:
+- The python script **PYTOV.py** which integrates the above mentioned equations.
 
-    +   A high density equation of state file and a low density equation of state file will be read and then combined in a simple manner.
+The following is a brief summary of what the code does:
 
-    +   Simple logarithmic interpolation of the combined equation of state is used [4].
+-   A high density equation of state file and a low density equation of state file will be read and then combined in a simple manner.
 
-    +   A simple fixed step fourth order Runge-Kutta method is used to integrate the TOV equations. A central density is specified and the TOV equations are integrated out to the surface of the compact star. This is repeated for a range of densities.
+- Simple logarithmic interpolation of the combined equation of state is used [4].
+
+- A simple fixed step fourth order Runge-Kutta method is used to integrate the TOV equations. A central density is specified and the TOV equations are integrated out to the surface of the compact star. This is repeated for a range of densities.
 
     -   The required data for a mass vs radius curve is output to a file (**compact_stars.dat**) along with a file containing the details of the maximum mass compact star (**max_mass_star.dat**). Running PYTOV will also produce the following figures:
     - a mass vs radius figure

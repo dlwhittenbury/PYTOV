@@ -356,10 +356,11 @@ iterations = 335;
 
 # Start off centre
 rs = 0.00001; # [km]
-# Stepsize (APPROX. TIME: dr = 0.01 about 1 min, dr = 0.001 about 10 min )
-# Best to use 0.001 when you require accurate results. Could improve this  
+# Stepsize (APPROX. TIME: dr = 0.01 about ~1 min, dr = 0.001 about ~10 min )
+# Best to use 0.001 or smaller when you require accurate results. It all 
+# depends on how long you are willing to wait. Although, you could improve this  
 # integrator by upgrading to a variable step size integrator.
-dr = 0.001;# 0.01; 0.001;
+dr = 0.001;# 0.01; 0.001; 0.0001;
 
 
 
@@ -384,7 +385,7 @@ for i in range(iterations):
     Rhoc[i] = nB
 
     # Starting values: We are not at the centre of the star, but rather 
-    # slightly of centre, starting at rs.
+    # slightly off centre, starting at rs.
     
     # Gravitational mass M[r=0] = 0, but we are not at the centre so we have a 
     # small contribution
@@ -394,8 +395,7 @@ for i in range(iterations):
     # Phi[r=0] is not known. Actually phi will be matched at the surface, so we
     # could set the y[1] = 0 and there would be no difference! BUT we can also 
     # choose phi0 = 0 at the centre and add a second term which is the 
-    # correction because we are not starting at the centre. We don't really 
-    # need to do this because Phi will be matched at the surface.
+    # correction because we are not starting at the centre. 
     y[1] = 0.0 + (2.0*pi/3.0)*(energydensity(pressure(nB)) + 3.0*pressure(nB))*rs**2;
     
     # Pressrue P[r=0] = P0, but we are not at the centre, so we have a small 
@@ -466,9 +466,14 @@ print("\n\n Max mass determined in simple manner, no interpolation!")
 print("Index, Mmax [M_sol], Rmax [km] = ",ind,Mmax,Rmax)
 
 # max_mass_star.dat
-OUT = [Rhocmax,Rmax, Mmax]
-np.savetxt('max_mass_star.dat',OUT,fmt='%1.6e')
-
+NAMES  = np.array([r'# \rho_c [fm^{-3}]', '# R [km]', r'# M [M_{odot}]'])
+DAT = np.array([Rhocmax,Rmax, Mmax])
+OUT = np.zeros(NAMES.size, dtype=[('var1', float),('var2', 'U20')])
+OUT['var1'] = DAT
+OUT['var2'] = NAMES
+np.savetxt('max_mass_star.dat',OUT,delimiter="    ",fmt="%-1.6e %-20s")
+# the dash `-` in the format specifer tells python to align to the left
+#print(OUT)
 
 fig1 = plt.figure(figsize=(8,6))
 plt.plot(Rns, Mns,'b*-')
