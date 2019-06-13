@@ -20,6 +20,13 @@ PYTOV:
         This is repeated for a range of densities. 
     -   The required data for a mass vs radius curve is output to a file along
         with a file containing the details of the maximum mass compact star.
+        
+        
+    Bugs found and corrected:
+    =========================
+    17/4/2019: L193 return eeos[last] should be return peos[last] no change.
+
+      
     
 @author: D. L. Whittenbury
 """
@@ -158,8 +165,6 @@ def energydensity(P):
             
             else : return eeos[last] # No extrapolation to higher en. density/pressure used
 
-    return eden;
-
 def pressure(n):
     """ Calculate the pressure as a function of baryonic density
     
@@ -190,7 +195,7 @@ def pressure(n):
                 
                 return press
             
-            else : return eeos[last] # No extrapolation to higher density/pressure used
+            else : return peos[last] # No extrapolation to higher density/pressure used
         
 
 ################
