@@ -8,7 +8,7 @@
 ehthumbs.db
 Thumbs.db
 
-
+**/venv/
 
 # INPUT.md readme file with latex not yet converted
 #python -m readme2tex --output README.md INPUT.md

@@ -1,9 +1,8 @@
 # PYTOV: Python Tolman-Oppenheimer-Volkoff equation solver
----
+
 
 PYTOV is a simple Python implementation to integrate the Tolman-Oppenheimer-Volkoff (TOV) equations.
 
----
 
 
 The program PYTOV integrates the following set of four equations (<img alt="$G = c = 1$" src="svgs/f944a0ba9141dc7428192f7f5ef42633.svg" align="middle" width="72.092955pt" height="22.46574pt"/>):
@@ -27,17 +26,39 @@ This repository contains:
 
     -   The required data for a mass vs radius curve is output to a file (**compact_stars.dat**) along with a file containing the details of the maximum mass compact star (**max_mass_star.dat**). Running PYTOV will also produce the following figures:
     - a mass vs radius figure
-      ![image info](./mass_vs_radius.png)
+      ![image info](./output/mass_vs_radius.png)
 
     - pressure vs density figure
-      ![image info](./pressure_vs_density.png)
+      ![image info](./output/pressure_vs_density.png)
 
     - and a gravitational field vs radius figure
-      ![image info](./grav_vs_radius.png)
+      ![image info](./output/grav_vs_radius.png)
 
+## Additional notes
 
-# References
+Set up a virtual environment and install the prerequisites
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install -U pip
+pip install numpy matplotlib pyqt5
+```
+
+To run:
+```bash
+python PYTOV.py
+```
+
+PYTOV is a simple code to illustrate how one can solve the TOV equations. It comes with two sample equations of state (EoS), a low density equation of state known as the BPS EoS and a higher density EoS based on the Quark-Meson Coupling (QMC) model. If you intend to use this code with your own EoS, please make sure your EoS data file is in the same units as the ones provided and the columns are in the same order. These are as follows:
+
+Density [fm^-3], Pressure [MeVfm^-3] and Energy Density [MeVfm^-3].
+
+You should also check that your high density EoS has some overlap with the low density EoS, so they can be joined. You may also want to change the starting central density etcetera. 
+
+## References
+
 1. J. R. Oppenheimer and G. M. Volkoff, G. M., "On Massive Neutron Cores". [Physical Review. 55 (4): 374–381 (1939)](https://journals.aps.org/pr/abstract/10.1103/PhysRev.55.374)
+   
 2. R. C. Tolman, "Static Solutions of Einstein's Field Equations for Spheres of Fluid". [Physical Review. 55 (4): 364–373 (1939)](https://journals.aps.org/pr/abstract/10.1103/PhysRev.55.364).
 
 3. G. Baym, C. Pethick and P. Sutherland, The ground state of matter at high densities: Equation of state and stellar models, [Astrophysical Journal, vol. 170, p.299 (1971)](http://adsbit.harvard.edu/cgi-bin/nph-iarticle_query?1971ApJ...170..299B&defaultprint=YES&filetype=.pdf)
@@ -49,3 +70,5 @@ This repository contains:
 6. D. L. Whittenbury, J. D. Carroll, A. W. Thomas, K. Tsushima, and J. R. Stone, Quark-meson coupling model, nuclear matter constraints, and neutron star properties. [Phys. Rev. C 89, 065801 (2014)](https://journals.aps.org/prc/abstract/10.1103/PhysRevC.89.065801)
 
 7.  D. L. Whittenbury, H. H. Matevosyan, and A. W. Thomas, Hybrid stars using the quark-meson coupling and proper-time Nambu–Jona-Lasinio models. [Phys. Rev. C 93, 035807 (2016)](https://journals.aps.org/prc/abstract/10.1103/PhysRevC.93.035807)
+
+8. Norman K. Glendenning, Compact Stars: Nuclear Physics, Particle Physics and General Relativity, Springer, 2012.  
